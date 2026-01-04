@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية البر الخيرية بالأبواء | نصنع الأمل</title>
+    <title>جمعية البر الخيرية بالأبواء | لنصنع الأمل</title>
     <!-- استدعاء خط 'Cairo' من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* المتغيرات العامة للألوان والخطوط */
+        /* المتغيرات العامة للألوان - تصميم عصري مشرق */
         :root {
-            --primary-color: #1e6f42; /* أخضر غامق */
-            --secondary-color: #d4af37; /* ذهبي */
-            --accent-color: #4CAF50;
-            --text-dark: #333333;
-            --text-light: #666666;
+            --primary-color: #43a047; /* أخضر عصري وفاتح */
+            --primary-dark: #2e7d32;
+            --secondary-color: #fdd835; /* أصفر ذهبي مشرق */
+            --accent-color: #ffca28;
+            --text-dark: #263238;
+            --text-light: #546e7a;
             --white: #ffffff;
-            --bg-light: #f9f9f9;
+            --bg-light: #f1f8e9; /* خلفية خضراء فاتحة جداً */
+            --bg-gray: #f9fafb;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --radius: 16px;
             --transition: all 0.3s ease;
-            --shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         /* التنسيق الأساسي */
@@ -34,9 +37,9 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--white);
+            background-color: var(--bg-gray);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
@@ -58,20 +61,21 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
             padding: 0 15px;
         }
 
-        /* شريط التنقل (Header) */
+        /* شريط التنقل (Header) - عصري */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 90px;
+            height: 80px;
             display: flex;
             align-items: center;
         }
@@ -84,28 +88,28 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--primary-dark);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             line-height: 1.2;
         }
 
         .logo i {
             color: var(--secondary-color);
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-dark);
             position: relative;
         }
@@ -114,122 +118,115 @@
             color: var(--primary-color);
         }
 
-        .btn-donate-nav {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 4px;
+        /* زر الخدمات الإلكترونية في الهيدر */
+        .nav-links a.service-link {
+            background-color: var(--secondary-color);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 30px;
             font-weight: 700;
+            box-shadow: 0 4px 10px rgba(253, 216, 53, 0.3);
         }
 
-        .btn-donate-nav:hover {
-            background-color: var(--secondary-color);
+        .nav-links a.service-link:hover {
+            background-color: var(--primary-dark);
             color: var(--white);
+            transform: translateY(-2px);
         }
 
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-dark);
+            color: var(--primary-dark);
         }
 
-        /* قسم الهيرو (Hero Section) */
+        /* قسم الهيرو (Hero Section) - بدون أزرار */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(30, 111, 66, 0.85), rgba(30, 111, 66, 0.7)), url('https://picsum.photos/seed/alabwa/1920/1080');
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.85), rgba(67, 160, 71, 0.75)), url('https://picsum.photos/seed/volunteers-helping/1920/1080'); /* صورة عمل خيري وتطوع */
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding-top: 90px;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, var(--bg-gray), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .hero-content h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            font-weight: 900;
-            line-height: 1.3;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-weight: 400;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 35px;
-            border-radius: 5px;
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
-            transition: var(--transition);
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: #bfa132;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-        }
-
-        /* قسم الإحصائيات */
-        .stats {
-            padding: 40px 0;
-            background-color: var(--white);
-            margin-top: -60px;
+        /* قسم الإحصائيات - تصميم عائم */
+        .stats-wrapper {
+            margin-top: -80px;
             position: relative;
             z-index: 10;
+            margin-bottom: 60px;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        .stats-container {
             background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
+            border-radius: var(--radius);
+            padding: 40px;
             box-shadow: var(--shadow);
-            text-align: center;
-            border-top: 4px solid var(--secondary-color);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
         }
 
-        .stat-item h3 {
-            font-size: 2.2rem;
+        .stat-box {
+            text-align: center;
+            border-left: 1px solid #eee;
+        }
+
+        .stat-box:last-child {
+            border-left: none;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 5px;
             font-weight: 800;
         }
 
-        .stat-item p {
+        .stat-box p {
             color: var(--text-light);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         /* أقسام عامة */
@@ -240,57 +237,50 @@
         .section-header {
             text-align: center;
             margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
             margin-bottom: 15px;
-        }
-
-        .section-header h2::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
+            font-weight: 800;
         }
 
         .section-header p {
             color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.1rem;
         }
 
-        /* قسم المشاريع (Projects) */
-        .projects {
-            background-color: var(--bg-light);
+        /* قسم المشاريع - تصميم بطاقات نظيفة */
+        .projects-section {
+            background-color: var(--bg-gray);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .project-card {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid transparent;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            border-color: #e0e0e0;
         }
 
         .project-img {
-            height: 220px;
+            height: 250px;
             overflow: hidden;
             position: relative;
         }
@@ -299,11 +289,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
         .project-card:hover .project-img img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .project-content {
@@ -311,81 +301,95 @@
             text-align: center;
         }
 
-        .category-tag {
-            background-color: #e8f5e9;
-            color: var(--primary-color);
-            padding: 5px 12px;
+        .tag {
+            background-color: var(--bg-light);
+            color: var(--primary-dark);
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             display: inline-block;
             margin-bottom: 15px;
         }
 
         .project-content h3 {
-            margin-bottom: 10px;
             font-size: 1.4rem;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
 
         .project-content p {
             color: var(--text-light);
-            font-size: 0.95rem;
             margin-bottom: 25px;
+            font-size: 0.95rem;
         }
 
-        .btn-details {
-            display: inline-block;
-            background-color: transparent;
+        .btn-link {
             color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            padding: 8px 30px;
-            border-radius: 5px;
             font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: rgba(67, 160, 71, 0.1);
             transition: var(--transition);
         }
 
-        .btn-details:hover {
+        .btn-link:hover {
             background-color: var(--primary-color);
             color: var(--white);
         }
 
-        /* قسم الخدمات (How we can help) */
-        .features-grid {
+        /* قسم الخدمات (مميزات) */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .feature-box {
-            text-align: center;
-            padding: 30px 20px;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            transition: var(--transition);
+        .service-item {
             background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #eee;
         }
 
-        .feature-box:hover {
+        .service-item:hover {
             border-color: var(--secondary-color);
-            background-color: #fffdf5;
             transform: translateY(-5px);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: var(--transition);
         }
 
-        .feature-box h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+        .service-item:hover .icon-box {
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
-        /* قسم الأخبار (News) - بديل قسم التبرع */
+        .service-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* قسم الأخبار */
         .news-section {
-            background-color: #f0f4f1;
+            background-color: var(--bg-light);
         }
 
         .news-grid {
@@ -396,19 +400,13 @@
 
         .news-card {
             background: var(--white);
-            border-radius: 8px;
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
         }
 
         .news-img {
-            height: 200px;
-            background-color: #ddd;
+            height: 220px;
         }
         
         .news-img img {
@@ -418,77 +416,62 @@
         }
 
         .news-content {
-            padding: 20px;
+            padding: 25px;
         }
 
-        .news-date {
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .news-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .news-link {
+        .news-meta {
             color: var(--secondary-color);
-            font-weight: 600;
             font-size: 0.9rem;
-            display: inline-flex;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
             align-items: center;
             gap: 5px;
         }
 
-        .news-link:hover {
-            gap: 10px; /* حركة بسيطة للسهم */
+        .news-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         /* التذييل (Footer) */
         footer {
-            background-color: #1a1a1a;
-            color: #ccc;
-            padding: 60px 0 20px;
+            background-color: #1b5e20; /* أخضر داكن جداً للفوتر */
+            color: #e8f5e9;
+            padding: 80px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-col h4 {
             color: var(--white);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--secondary-color);
-        }
-
-        .footer-col p {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
         }
 
         .footer-links li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #a5d6a7;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
@@ -496,39 +479,45 @@
             padding-right: 5px;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
+        .social-links a {
             width: 40px;
             height: 40px;
-            background-color: #333;
-            display: flex;
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            color: var(--white);
+            margin-left: 10px;
             transition: var(--transition);
         }
 
-        .social-icons a:hover {
+        .social-links a:hover {
             background-color: var(--secondary-color);
-            color: var(--white);
+            color: var(--primary-dark);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #333;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
+            color: #a5d6a7;
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-box:nth-child(2) {
+                border-left: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .menu-toggle {
@@ -536,31 +525,38 @@
             }
 
             .nav-links {
-                position: absolute;
-                top: 90px;
-                right: 0;
+                position: fixed;
+                top: 80px;
+                right: -100%;
                 width: 100%;
+                height: calc(100vh - 80px);
                 background-color: var(--white);
                 flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                gap: 15px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                padding: 40px;
+                gap: 20px;
                 transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             }
 
             .nav-links.active {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                right: 0;
             }
 
-            .stats-grid {
-                padding: 15px;
-                gap: 15px;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-
-            .stat-item h3 {
-                font-size: 1.6rem;
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .stat-box {
+                border-left: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
             }
         }
     </style>
@@ -582,9 +578,10 @@
                     <li><a href="#about">عن الجمعية</a></li>
                     <li><a href="#projects">المشاريع</a></li>
                     <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#news">الأخبار</a></li>
+                    <li><a href="#news">أخبار الجمعية</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
-                    <li><a href="#donate" class="btn-donate-nav">الخدمات الإلكترونية</a></li>
+                    <!-- البديل لتبرع الان -->
+                    <li><a href="#" class="service-link">الخدمات الالكترونية</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle" id="menuToggle">
@@ -593,167 +590,175 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
+    <!-- القسم الرئيسي (بدون أزرار) -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h1>جمعية البر الخيرية بالأبواء<br>مستقبل أفضل لجميعنا</h1>
-            <p>نسعى جاهدين لخدمة أهالي منطقة الأبواء وتقديم الخدمات الخيرية والاجتماعية بأعلى معايير الجودة والشفافية.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">خدماتنا</a>
-                <a href="#contact" class="btn btn-outline">تواصل معنا</a>
-            </div>
+            <h1>جمعية البر الخيرية بالأبواء<br>نصنع الأمل ونستقبل المستقبل</h1>
+            <p>مؤسسة رائدة في مجال العمل الخيري والتنموي، نسعى لتقديم خدمات نوعية تضمن حياة كريمة للجميع.</p>
         </div>
     </section>
 
-    <!-- قسم الإحصائيات -->
+    <!-- شريط الإحصائيات العائم -->
     <div class="container">
-        <section class="stats">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>+8,000</h3>
-                    <p>مستفيد</p>
+        <div class="stats-wrapper">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>+10,000</h3>
+                    <p>مستفيد سنوياً</p>
                 </div>
-                <div class="stat-item">
-                    <h3>+50</h3>
+                <div class="stat-box">
+                    <h3>+60</h3>
                     <p>مشروع تنموي</p>
                 </div>
-                <div class="stat-item">
-                    <h3>+300</h3>
-                    <p>متطوع</p>
+                <div class="stat-box">
+                    <h3>+800</h3>
+                    <p>متطوع ومتطوعة</p>
                 </div>
-                <div class="stat-item">
-                    <h3>15</h3>
-                    <p>سنة عطاء</p>
+                <div class="stat-box">
+                    <h3>20</h3>
+                    <p>سنة من العطاء</p>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <!-- قسم المشاريع (بدون شريط التبرع) -->
-    <section id="projects" class="section projects">
+    <!-- قسم المشاريع -->
+    <section id="projects" class="section projects-section">
         <div class="container">
             <div class="section-header">
-                <h2>أبرز مشاريعنا</h2>
-                <p>ننفذ مجموعة من المشاريع التي تهدف لخدمة المجتمع وتلبية احتياجات الأسر المحتاجة.</p>
+                <h2>مشاريعنا التنموية</h2>
+                <p>نحرص على تنفيذ مشاريع مستدامة تخدم المجتمع وتلبي الاحتياجات الماسة.</p>
             </div>
             <div class="projects-grid">
                 <!-- مشروع 1 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/sadaqah/400/300" alt="سقايا وصدقة جارية">
+                        <img src="https://picsum.photos/seed/mosque/400/300" alt="بناء المساجد">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">مشاريع خيرية</span>
-                        <h3>سقايا وصدقة جارية</h3>
-                        <p>إنشاء وترميم السقايا في الأماكن العامة والمساجد لتوفير مياه الشرب للمارة والزوار.</p>
-                        <a href="#" class="btn-details">التفاصيل</a>
+                        <span class="tag">بناء وترميم</span>
+                        <h3>مشاريع المساجد والسقايا</h3>
+                        <p>العناية ببناء وترميم المساجد وتوفير الماء البارد للسقايا العامة في منطقة الأبواء.</p>
+                        <a href="#" class="btn-link">التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
 
                 <!-- مشروع 2 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/educate/400/300" alt="مشروع طالب العلم">
+                        <img src="https://picsum.photos/seed/student/400/300" alt="مشروع طالب العلم">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">تعليم</span>
-                        <h3>مشروع طالب العلم</h3>
-                        <p>دعم الطلاب المتفوقين من الأسر المحتاجة وتوفير المستلزمات المدرسية والجامعية.</p>
-                        <a href="#" class="btn-details">التفاصيل</a>
+                        <span class="tag">تعليمي</span>
+                        <h3>مشروع مكافأة المتفوقين</h3>
+                        <p>دعم الطلاب والطالبات المتفوقين دراسياً وتشجيعهم على الاستمرار في مسيرتهم العلمية.</p>
+                        <a href="#" class="btn-link">التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
 
                 <!-- مشروع 3 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/maintenance/400/300" alt="صيانة وترميم منازل">
+                        <img src="https://picsum.photos/seed/family/400/300" alt="صندوق الأسرة">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">إسكان اجتماعي</span>
-                        <h3>صيانة وترميم المنازل</h3>
-                        <p>مشروع مكرم الملك عبدالله لصيانة المنازل المتآكلة للأسر المحتاجة لتوفير حياة كريمة.</p>
-                        <a href="#" class="btn-details">التفاصيل</a>
+                        <span class="tag">اجتماعي</span>
+                        <h3>سلة شهر رمضان</h3>
+                        <p>توفير السلع الغذائية للأسر المحتاجة في الشهر الفضيل لضمان صومهم في يسر وراحة.</p>
+                        <a href="#" class="btn-link">التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الخدمات (التعديلات المطلوبة) -->
+    <!-- قسم الخدمات (كيف يمكننا المساعدة) -->
     <section id="services" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>كيف يمكننا المساعدة؟</h2>
-                <p>نقدم مجموعة من الخدمات الإلكترونية لتسهيل الوصول إليك.</p>
+                <h2>بوابة الخدمات</h2>
+                <p>أنتقلنا نحو الخدمات الإلكترونية لتوفير الوقت والجهد عليكم.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fa-solid fa-hand-holding-dollar feature-icon"></i>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
                     <h3>التبرع الإلكتروني</h3>
-                    <p>تتمكن من التبرع لمشاريعنا المختلفة عبر القنوات الإلكترونية الآمنة.</p>
+                    <p>تبرع بسهولة وأمان لمشاريعنا المختلفة عبر البوابات الإلكترونية.</p>
                 </div>
-                <div class="feature-box">
-                    <i class="fa-solid fa-users feature-icon"></i>
+                <div class="service-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
                     <h3>التطوع</h3>
-                    <p>سجل كمتطوف وكن جزءاً من فريق العمل الخيري في الجمعية.</p>
+                    <p>انضم لأسرة المتطوعين وساهم بوقتك ومهاراتك لخدمة المجتمع.</p>
                 </div>
-                <!-- التعديل: تسجيل مستفيد جديد -->
-                <div class="feature-box">
-                    <i class="fa-solid fa-user-plus feature-icon"></i>
+                <div class="service-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
                     <h3>تسجيل مستفيد جديد</h3>
-                    <p>بوابة مخصصة لتسجيل الحالات الجديدة التي تستحق الدعم والمساعدة.</p>
+                    <p>بوابة إلكترونية لتسجيل الحالات الجديدة التي تحتاج الدعم والمساعدة.</p>
                 </div>
-                <!-- التعديل: طلب دعم -->
-                <div class="feature-box">
-                    <i class="fa-solid fa-file-signature feature-icon"></i>
+                <div class="service-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
                     <h3>طلب دعم</h3>
-                    <p>خدمة تتيح للأسر المستفيدة تقديم طلبات الدعم المختلفة بشكل إلكتروني.</p>
+                    <p>تقدم بطلبك للحصول على دعم مالي أو عيني عبر النظام الإلكتروني.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الأخبار (بديل قسم التبرع) -->
+    <!-- قسم الأخبار -->
     <section id="news" class="section news-section">
         <div class="container">
             <div class="section-header">
-                <h2>أخبار الجمعية</h2>
-                <p>تابع أحدث المستجدات والفعاليات والإنجازات التي تقوم بها جمعية البر الخيرية بالأبواء.</p>
+                <h2>أخبار وفعاليات</h2>
+                <p>تابع معنا آخر أخبار الجمعية والفعاليات التي تم إقامتها.</p>
             </div>
             <div class="news-grid">
                 <!-- خبر 1 -->
                 <div class="news-card">
                     <div class="news-img">
-                        <img src="https://picsum.photos/seed/event1/400/300" alt="فعالية توزيع السلات">
+                        <img src="https://picsum.photos/seed/charity-event/400/300" alt="توزيع سلات">
                     </div>
                     <div class="news-content">
-                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 15 أكتوبر 2023</span>
-                        <h3>توزيع 500 سلة غذائية في إطار حملة "إطعام"</h3>
-                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                        <div class="news-meta">
+                            <i class="fa-regular fa-calendar"></i> 20 أكتوبر 2023
+                        </div>
+                        <h3>اطلاق حملة (إطعام) لتوزيع 1000 سلة غذائية</h3>
+                        <a href="#" class="btn-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
 
                 <!-- خبر 2 -->
                 <div class="news-card">
                     <div class="news-img">
-                        <img src="https://picsum.photos/seed/event2/400/300" alt="تكريم المتطوعين">
+                        <img src="https://picsum.photos/seed/volunteers/400/300" alt="زيارة ميدانية">
                     </div>
                     <div class="news-content">
-                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 10 أكتوبر 2023</span>
-                        <h3>حفل تكريم المتطوعين المتميزين لهذا العام</h3>
-                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                        <div class="news-meta">
+                            <i class="fa-regular fa-calendar"></i> 18 أكتوبر 2023
+                        </div>
+                        <h3>زيارة ميدانية لفريق المتطوعين للأسر المحتاجة</h3>
+                        <a href="#" class="btn-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
 
                 <!-- خبر 3 -->
                 <div class="news-card">
                     <div class="news-img">
-                        <img src="https://picsum.photos/seed/event3/400/300" alt="افتتاح المقر الجديد">
+                        <img src="https://picsum.photos/seed/meeting/400/300" alt="اجتماع مجلس الإدارة">
                     </div>
                     <div class="news-content">
-                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 05 أكتوبر 2023</span>
-                        <h3>افتتاح فرع الجمعية الجديد لخدمة القرى النائية</h3>
-                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                        <div class="news-meta">
+                            <i class="fa-regular fa-calendar"></i> 15 أكتوبر 2023
+                        </div>
+                        <h3>اعتماد الخطة الاستراتيجية الجديدة للجمعية</h3>
+                        <a href="#" class="btn-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </div>
             </div>
@@ -765,38 +770,47 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px; color: #fff; display: inline-flex;">
-                        <i class="fa-solid fa-mosque" style="color: var(--secondary-color);"></i>
-                        <div style="margin-right: 10px;">
-                            جمعية البر الخيرية<br>بالأبواء
-                        </div>
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-mosque"></i>
+                        جمعية البر الخيرية بالأبواء
                     </div>
-                    <p>جمعية البر الخيرية بالأبواء، مؤسسة خيرية تسعى لخدمة المجتمع وتنميته وتقديم العون للمحتاجين.</p>
-                    <div class="social-icons">
+                    <p style="opacity: 0.8; line-height: 1.8;">
+                        نؤمن بأن العطاء هو أساس المجتمع الرقي، ونسعى من خلال مشاريعنا وخدماتنا إلى تحقيق التنمية المستدامة وإسعاد أهالي منطقة الأبواء.
+                    </p>
+                    <div class="social-links" style="margin-top: 20px;">
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-snapchat"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
+                    <h4>عن الجمعية</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">كلمة المدير</a></li>
+                        <li><a href="#">الهيكل التنظيمي</a></li>
+                        <li><a href="#">التقارير السنوية</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
                     <h4>روابط هامة</h4>
                     <ul class="footer-links">
-                        <li><a href="#about">عن الجمعية</a></li>
-                        <li><a href="#projects">المشاريع الحالية</a></li>
-                        <li><a href="#services">بوابة المستفيدين</a></li>
-                        <li><a href="#">التقارير السنوية</a></li>
-                        <li><a href="#">وظائف</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">المساهمة في الجمعية</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>تواصل معنا</h4>
-                    <ul class="footer-links" style="border: none;">
-                        <li><i class="fa-solid fa-location-dot" style="margin-left: 10px; color: var(--secondary-color);"></i> المدينة المنورة - منطقة الأبواء</li>
-                        <li><i class="fa-solid fa-phone" style="margin-left: 10px; color: var(--secondary-color);"></i> 0140000000</li>
-                        <li><i class="fa-solid fa-envelope" style="margin-left: 10px; color: var(--secondary-color);"></i> info@biralabwa.org</li>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot" style="margin-left: 10px;"></i> المدينة المنورة - طريق المدينة القديم</li>
+                        <li><i class="fa-solid fa-phone" style="margin-left: 10px;"></i> 9200xxxxx</li>
+                        <li><i class="fa-solid fa-envelope" style="margin-left: 10px;"></i> info@biralabwa.org</li>
                     </ul>
                 </div>
             </div>
@@ -806,9 +820,8 @@
         </div>
     </footer>
 
-    <!-- جافاسكربت بسيط للقائمة -->
+    <!-- جافاسكربت للقائمة -->
     <script>
-        // تفعيل قائمة الموبايل
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -825,7 +838,6 @@
             }
         });
 
-        // إغلاق القائمة عند الضغط على رابط
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -834,7 +846,16 @@
                 icon.classList.add('fa-bars');
             });
         });
+
+        // تغيير خلفية الهيدر عند السكرول
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.03)';
+            }
+        });
     </script>
 </body>
 </html>
-
