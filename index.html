@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية البر الخيرية بالأبواء | معاً نصنع الأمل</title>
+    <title>جمعية البر الخيرية بالأبواء | نصنع الأمل</title>
     <!-- استدعاء خط 'Cairo' من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,15 @@
     <style>
         /* المتغيرات العامة للألوان والخطوط */
         :root {
-            --primary-color: #2E7D32; /* أخضر غامق للثقة */
-            --secondary-color: #F9A825; /* ذهبي للتميز */
-            --accent-color: #4CAF50; /* أخضر فاتح للأزرار */
+            --primary-color: #1e6f42; /* أخضر غامق */
+            --secondary-color: #d4af37; /* ذهبي */
+            --accent-color: #4CAF50;
             --text-dark: #333333;
             --text-light: #666666;
             --white: #ffffff;
-            --bg-light: #f4f7f6;
+            --bg-light: #f9f9f9;
             --transition: all 0.3s ease;
-            --shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         /* التنسيق الأساسي */
@@ -71,7 +71,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 80px;
+            height: 90px;
             display: flex;
             align-items: center;
         }
@@ -84,25 +84,28 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: var(--primary-color);
             display: flex;
             align-items: center;
             gap: 10px;
+            line-height: 1.2;
         }
 
         .logo i {
             color: var(--secondary-color);
+            font-size: 2rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
             font-weight: 600;
+            font-size: 0.95rem;
             color: var(--text-dark);
             position: relative;
         }
@@ -111,33 +114,16 @@
             color: var(--primary-color);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            right: 0;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .btn-donate {
-            background-color: var(--secondary-color);
+        .btn-donate-nav {
+            background-color: var(--primary-color);
             color: var(--white);
-            padding: 10px 25px;
-            border-radius: 50px;
+            padding: 8px 20px;
+            border-radius: 4px;
             font-weight: 700;
-            box-shadow: 0 4px 10px rgba(249, 168, 37, 0.3);
         }
 
-        .btn-donate:hover {
-            background-color: #e69600;
-            transform: translateY(-2px);
+        .btn-donate-nav:hover {
+            background-color: var(--secondary-color);
             color: var(--white);
         }
 
@@ -150,8 +136,8 @@
 
         /* قسم الهيرو (Hero Section) */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.6)), url('https://picsum.photos/seed/charity/1920/1080');
+            height: 90vh;
+            background: linear-gradient(rgba(30, 111, 66, 0.85), rgba(30, 111, 66, 0.7)), url('https://picsum.photos/seed/alabwa/1920/1080');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -159,15 +145,14 @@
             justify-content: center;
             text-align: center;
             color: var(--white);
-            margin-top: 0; /* Header is fixed but we want full screen visual */
-            padding-top: 80px;
+            padding-top: 90px;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             font-weight: 900;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .hero-content p {
@@ -190,6 +175,7 @@
             cursor: pointer;
             border: none;
             transition: var(--transition);
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -198,7 +184,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #e69600;
+            background-color: #bfa132;
         }
 
         .btn-outline {
@@ -214,9 +200,9 @@
 
         /* قسم الإحصائيات */
         .stats {
-            padding: 60px 0;
+            padding: 40px 0;
             background-color: var(--white);
-            margin-top: -50px;
+            margin-top: -60px;
             position: relative;
             z-index: 10;
         }
@@ -224,23 +210,26 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 20px;
             background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 8px;
             box-shadow: var(--shadow);
             text-align: center;
+            border-top: 4px solid var(--secondary-color);
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            font-weight: 800;
         }
 
         .stat-item p {
             color: var(--text-light);
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         /* أقسام عامة */
@@ -264,7 +253,7 @@
         .section-header h2::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 3px;
             background-color: var(--secondary-color);
             margin: 10px auto 0;
@@ -296,11 +285,12 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .project-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
         }
@@ -313,18 +303,19 @@
         }
 
         .project-card:hover .project-img img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .project-content {
             padding: 25px;
+            text-align: center;
         }
 
         .category-tag {
             background-color: #e8f5e9;
             color: var(--primary-color);
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 5px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
             display: inline-block;
@@ -333,40 +324,33 @@
 
         .project-content h3 {
             margin-bottom: 10px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            color: var(--text-dark);
         }
 
-        .progress-bar {
-            background-color: #eee;
-            height: 10px;
-            border-radius: 5px;
-            margin: 20px 0;
-            position: relative;
-        }
-
-        .progress {
-            background-color: var(--secondary-color);
-            height: 100%;
-            border-radius: 5px;
-        }
-
-        .donation-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .raised {
-            color: var(--primary-color);
-        }
-
-        .goal {
+        .project-content p {
             color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
         }
 
-        /* قسم لماذا نحن (Features) */
+        .btn-details {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 8px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-details:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* قسم الخدمات (How we can help) */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -375,53 +359,93 @@
 
         .feature-box {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
             border: 1px solid #eee;
             border-radius: 10px;
             transition: var(--transition);
+            background: var(--white);
         }
 
         .feature-box:hover {
-            border-color: var(--primary-color);
-            background-color: #f1f8e9;
+            border-color: var(--secondary-color);
+            background-color: #fffdf5;
+            transform: translateY(-5px);
         }
 
         .feature-icon {
             font-size: 3rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 20px;
         }
 
-        /* قسم التبرع السريع (Call to Action) */
-        .cta-section {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 0;
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Pattern bkg */
+        .feature-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        /* قسم الأخبار (News) - بديل قسم التبرع */
+        .news-section {
+            background-color: #f0f4f1;
         }
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .btn-white {
-            background-color: var(--white);
+        .news-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-img {
+            height: 200px;
+            background-color: #ddd;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
             color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
         }
 
-        .btn-white:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-link:hover {
+            gap: 10px; /* حركة بسيطة للسهم */
         }
 
         /* التذييل (Footer) */
@@ -463,6 +487,8 @@
 
         .footer-links li {
             margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
         }
 
         .footer-links a:hover {
@@ -502,7 +528,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .menu-toggle {
@@ -511,30 +537,30 @@
 
             .nav-links {
                 position: absolute;
-                top: 80px;
+                top: 90px;
                 right: 0;
                 width: 100%;
                 background-color: var(--white);
                 flex-direction: column;
                 align-items: center;
                 padding: 20px 0;
-                gap: 20px;
+                gap: 15px;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden */
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: var(--transition);
             }
 
             .nav-links.active {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Visible */
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
 
             .stats-grid {
-                padding: 20px;
+                padding: 15px;
                 gap: 15px;
             }
 
             .stat-item h3 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -545,17 +571,20 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fa-solid fa-hand-holding-heart"></i>
-                جمعية البر بالأبواء
+                <i class="fa-solid fa-mosque"></i>
+                <div>
+                    جمعية البر الخيرية<br>بالأبواء
+                </div>
             </div>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="active">الرئيسية</a></li>
                     <li><a href="#about">عن الجمعية</a></li>
-                    <li><a href="#projects">السياسات</a></li>
-                    <li><a href="#features">مشاريعنا</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#news">الأخبار</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
-                    <li><a href="#donate" class="btn-donate">الخدمات الإلكترونية</a></li>
+                    <li><a href="#donate" class="btn-donate-nav">تبرع الآن</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle" id="menuToggle">
@@ -567,11 +596,11 @@
     <!-- القسم الرئيسي -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h1>معاً نصنع الأمل<br>ونغير حياة الأسر المحتاجة</h1>
-            <p>نحن مؤسسة خيرية تسعى لتقديم يد العون للمحتاجين ورعاية الأيتام وتوفير سبل العيش الكريم للجميع. تبرعك اليوم يصنع فرداً غداً.</p>
+            <h1>جمعية البر الخيرية بالأبواء<br>مستقبل أفضل لجميعنا</h1>
+            <p>نسعى جاهدين لخدمة أهالي منطقة الأبواء وتقديم الخدمات الخيرية والاجتماعية بأعلى معايير الجودة والشفافية.</p>
             <div class="hero-buttons">
-                <a href="#donate" class="btn btn-primary">ساهم معنا</a>
-                <a href="#about" class="btn btn-outline">اعرف المزيد</a>
+                <a href="#services" class="btn btn-primary">خدماتنا</a>
+                <a href="#contact" class="btn btn-outline">تواصل معنا</a>
             </div>
         </div>
     </section>
@@ -581,150 +610,152 @@
         <section class="stats">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>+5,000</h3>
-                    <p>متبرع</p>
-                </div>
-                <div class="stat-item">
-                    <h3>+120</h3>
-                    <p>مشروع خيري</p>
-                </div>
-                <div class="stat-item">
-                    <h3>+10,000</h3>
+                    <h3>+8,000</h3>
                     <p>مستفيد</p>
                 </div>
                 <div class="stat-item">
-                    <h3>+500</h3>
+                    <h3>+50</h3>
+                    <p>مشروع تنموي</p>
+                </div>
+                <div class="stat-item">
+                    <h3>+300</h3>
                     <p>متطوع</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>سنة عطاء</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- قسم عن الجمعية -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>من نحن</h2>
-                <p>جمعية البر الخيرية بالأبواء هي مؤسسة غير ربحية تهدف إلى خدمة المجتمع وتحسين جودة الحياة للفئات الأكثر احتياجاً من خلال برامج تنموية مستدامة.</p>
-            </div>
-            <!-- يمكن إضافة فيديو أو صور إضافية هنا -->
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; color: #555;">نؤمن بأن العمل الخيري ليس مجرد إغاثة عاجلة، بل هو استثمار في البشر وبناء لمستقبل أفضل. نعمل بشفافية تامة ومصداقية عالية لنضمن وصول تبرعاتكم لمستحقيها.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المشاريع -->
+    <!-- قسم المشاريع (بدون شريط التبرع) -->
     <section id="projects" class="section projects">
         <div class="container">
             <div class="section-header">
                 <h2>أبرز مشاريعنا</h2>
-                <p>ادعم مشاريعنا الجارية وساهم في إحداث فرق حقيقي في حياة الكثيرين.</p>
+                <p>ننفذ مجموعة من المشاريع التي تهدف لخدمة المجتمع وتلبية احتياجات الأسر المحتاجة.</p>
             </div>
             <div class="projects-grid">
                 <!-- مشروع 1 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/orphan/400/300" alt="كفالة يتيم">
+                        <img src="https://picsum.photos/seed/sadaqah/400/300" alt="سقايا وصدقة جارية">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">كفالات</span>
-                        <h3>كفالة يتيم</h3>
-                        <p>امنح طفلاً اليتم حياة كريمة وتعليماً ومأوى وضماناً صحياً.</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 75%;"></div>
-                        </div>
-                        <div class="donation-info">
-                            <span class="raised">تم جمع: 75,000 ر.س</span>
-                            <span class="goal">الهدف: 100,000 ر.س</span>
-                        </div>
-                        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">تبرع الآن</a>
+                        <span class="category-tag">مشاريع خيرية</span>
+                        <h3>سقايا وصدقة جارية</h3>
+                        <p>إنشاء وترميم السقايا في الأماكن العامة والمساجد لتوفير مياه الشرب للمارة والزوار.</p>
+                        <a href="#" class="btn-details">التفاصيل</a>
                     </div>
                 </div>
 
                 <!-- مشروع 2 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/water/400/300" alt="سقيا ماء">
+                        <img src="https://picsum.photos/seed/educate/400/300" alt="مشروع طالب العلم">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">مشاريع مائية</span>
-                        <h3>سقيا ماء</h3>
-                        <p>ساهم في حفر آبار ارتوازية للمناطق المحرومة في أفريقيا وآسيا.</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 40%;"></div>
-                        </div>
-                        <div class="donation-info">
-                            <span class="raised">تم جمع: 40,000 ر.س</span>
-                            <span class="goal">الهدف: 100,000 ر.س</span>
-                        </div>
-                        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">تبرع الآن</a>
+                        <span class="category-tag">تعليم</span>
+                        <h3>مشروع طالب العلم</h3>
+                        <p>دعم الطلاب المتفوقين من الأسر المحتاجة وتوفير المستلزمات المدرسية والجامعية.</p>
+                        <a href="#" class="btn-details">التفاصيل</a>
                     </div>
                 </div>
 
                 <!-- مشروع 3 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://picsum.photos/seed/food/400/300" alt="إطعام">
+                        <img src="https://picsum.photos/seed/maintenance/400/300" alt="صيانة وترميم منازل">
                     </div>
                     <div class="project-content">
-                        <span class="category-tag">إغاثة</span>
-                        <h3>سلة الغذاء</h3>
-                        <p>وزع سلال غذائية على الأسر المتعففة في شهر رمضان وفي جميع الأوقات.</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%;"></div>
-                        </div>
-                        <div class="donation-info">
-                            <span class="raised">تم جمع: 9,000 ر.س</span>
-                            <span class="goal">الهدف: 10,000 ر.س</span>
-                        </div>
-                        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">تبرع الآن</a>
+                        <span class="category-tag">إسكان اجتماعي</span>
+                        <h3>صيانة وترميم المنازل</h3>
+                        <p>مشروع مكرم الملك عبدالله لصيانة المنازل المتآكلة للأسر المحتاجة لتوفير حياة كريمة.</p>
+                        <a href="#" class="btn-details">التفاصيل</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الخدمات/المميزات -->
-    <section id="features" class="section">
+    <!-- قسم الخدمات (التعديلات المطلوبة) -->
+    <section id="services" class="section">
         <div class="container">
             <div class="section-header">
                 <h2>كيف يمكننا المساعدة؟</h2>
+                <p>نقدم مجموعة من الخدمات الإلكترونية لتسهيل الوصول إليك.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-box">
                     <i class="fa-solid fa-hand-holding-dollar feature-icon"></i>
-                    <h3>تبرع مالي</h3>
-                    <p>ساهم بأي مبلغ تبرعاً صدقة جارية أو لمشاريع محددة.</p>
+                    <h3>التبرع الإلكتروني</h3>
+                    <p>تتمكن من التبرع لمشاريعنا المختلفة عبر القنوات الإلكترونية الآمنة.</p>
                 </div>
                 <div class="feature-box">
                     <i class="fa-solid fa-users feature-icon"></i>
-                    <h3>تطوع معنا</h3>
-                    <p>انضم لفريقنا المتطوع وشارك في صناعة الأمل على أرض الواقع.</p>
+                    <h3>التطوع</h3>
+                    <p>سجل كمتطوف وكن جزءاً من فريق العمل الخيري في الجمعية.</p>
                 </div>
+                <!-- التعديل: تسجيل مستفيد جديد -->
                 <div class="feature-box">
-                    <i class="fa-solid fa-building-ngo feature-icon"></i>
-                    <h3>شراكات</h3>
-                    <p>يمكن للشركات والأفراد عقد شراكات استراتيجية معنا.</p>
+                    <i class="fa-solid fa-user-plus feature-icon"></i>
+                    <h3>تسجيل مستفيد جديد</h3>
+                    <p>بوابة مخصصة لتسجيل الحالات الجديدة التي تستحق الدعم والمساعدة.</p>
                 </div>
+                <!-- التعديل: طلب دعم -->
                 <div class="feature-box">
-                    <i class="fa-solid fa-hand-holding-heart feature-icon"></i>
-                    <h3>كفالات</h3>
-                    <p>تكفل يتيماً، طالب علم، أو أسرة بأكملها شهرياً.</p>
+                    <i class="fa-solid fa-file-signature feature-icon"></i>
+                    <h3>طلب دعم</h3>
+                    <p>خدمة تتيح للأسر المستفيدة تقديم طلبات الدعم المختلفة بشكل إلكتروني.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الحث على التبرع (CTA) -->
-    <section id="donate" class="cta-section">
+    <!-- قسم الأخبار (بديل قسم التبرع) -->
+    <section id="news" class="section news-section">
         <div class="container">
-            <h2>تصدق الآن، فإن الصدقة تطفئ الخطيئة</h2>
-            <p>مساهمتك مهما صغرت ستصنع فارقاً كبيراً في حياة شخص محتاج.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-white">تبرع عام</a>
-                <a href="#" class="btn btn-white">كفالة يتيم</a>
-                <a href="#" class="btn btn-white">ساهم بمشروع</a>
+            <div class="section-header">
+                <h2>أخبار الجمعية</h2>
+                <p>تابع أحدث المستجدات والفعاليات والإنجازات التي تقوم بها جمعية البر الخيرية بالأبواء.</p>
+            </div>
+            <div class="news-grid">
+                <!-- خبر 1 -->
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/event1/400/300" alt="فعالية توزيع السلات">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 15 أكتوبر 2023</span>
+                        <h3>توزيع 500 سلة غذائية في إطار حملة "إطعام"</h3>
+                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- خبر 2 -->
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/event2/400/300" alt="تكريم المتطوعين">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 10 أكتوبر 2023</span>
+                        <h3>حفل تكريم المتطوعين المتميزين لهذا العام</h3>
+                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- خبر 3 -->
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://picsum.photos/seed/event3/400/300" alt="افتتاح المقر الجديد">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date"><i class="fa-regular fa-calendar"></i> 05 أكتوبر 2023</span>
+                        <h3>افتتاح فرع الجمعية الجديد لخدمة القرى النائية</h3>
+                        <a href="#" class="news-link">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -734,41 +765,43 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px; color: #fff;">
-                        <i class="fa-solid fa-hand-holding-heart" style="color: var(--secondary-color);"></i>
-                        جمعية البر بالأبواء
+                    <div class="logo" style="margin-bottom: 20px; color: #fff; display: inline-flex;">
+                        <i class="fa-solid fa-mosque" style="color: var(--secondary-color);"></i>
+                        <div style="margin-right: 10px;">
+                            جمعية البر الخيرية<br>بالأبواء
+                        </div>
                     </div>
-                    <p>نسعى لخدمة المجتمع وتحقيق التنمية المستدامة من خلال برامجنا الخيرية المختلفة.</p>
+                    <p>جمعية البر الخيرية بالأبواء، مؤسسة خيرية تسعى لخدمة المجتمع وتنميته وتقديم العون للمحتاجين.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>روابط سريعة</h4>
+                    <h4>روابط هامة</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#about">عن الجمعية</a></li>
-                        <li><a href="#projects">المشاريع</a></li>
-                        <li><a href="#">الشفافية المالية</a></li>
-                        <li><a href="#">تطوع معنا</a></li>
+                        <li><a href="#projects">المشاريع الحالية</a></li>
+                        <li><a href="#services">بوابة المستفيدين</a></li>
+                        <li><a href="#">التقارير السنوية</a></li>
+                        <li><a href="#">وظائف</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>تواصل معنا</h4>
-                    <ul class="footer-links">
-                        <li><i class="fa-solid fa-location-dot" style="margin-left: 10px; color: var(--secondary-color);"></i> الأبواء، المملكة العربية السعودية</li>
-                        <li><i class="fa-solid fa-phone" style="margin-left: 10px; color: var(--secondary-color);"></i> +966 55555555</li>
-                        <li><i class="fa-solid fa-envelope" style="margin-left: 10px; color: var(--secondary-color);"></i> admin@biralabwa.org.sa</li>
+                    <ul class="footer-links" style="border: none;">
+                        <li><i class="fa-solid fa-location-dot" style="margin-left: 10px; color: var(--secondary-color);"></i> المدينة المنورة - منطقة الأبواء</li>
+                        <li><i class="fa-solid fa-phone" style="margin-left: 10px; color: var(--secondary-color);"></i> 0140000000</li>
+                        <li><i class="fa-solid fa-envelope" style="margin-left: 10px; color: var(--secondary-color);"></i> info@biralabwa.org</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; 2026 جمعية البر الخيرية بالأبواء</p>
+                <p>جميع الحقوق محفوظة &copy; 2023 جمعية البر الخيرية بالأبواء</p>
             </div>
         </div>
     </footer>
@@ -782,7 +815,6 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
-            // تغيير أيقونة القائمة
             const icon = menuToggle.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -793,7 +825,7 @@
             }
         });
 
-        // إغلاق القائمة عند الضغط على أي رابط
+        // إغلاق القائمة عند الضغط على رابط
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -801,16 +833,6 @@
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
             });
-        });
-
-        // تأثير الظهور عند السكرول (اختياري لتحسين المظهر)
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
-            }
         });
     </script>
 </body>
